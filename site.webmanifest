@@ -1,0 +1,21 @@
+{
+  "name": "NovaTextVN",
+  "short_name": "NovaTextVN",
+  "description": "NovaTextVN website for the Ren'Py-to-Russian translation release, install guide, troubleshooting, and PRO version.",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/renpy-game-translator-russian/",
+  "theme_color": "#020617",
+  "background_color": "#020617",
+  "display": "standalone"
+}
