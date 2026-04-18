@@ -1,21 +1,243 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="ru">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>NovaTextVN | Переводчик Ren'Py-игр на русский язык</title>
-  <meta name="description" content="NovaTextVN — переводчик Ren'Py-игр на русский язык. Скачайте Base-релиз, положите файлы в game/ и включите перевод через F10.">
+  <meta
+    name="description"
+    content="NovaTextVN — переводчик Ren'Py-игр на русский язык без ручной сборки. Основной сайт, установка, совместимость, релизы Base и страница PRO."
+  >
+  <meta
+    name="robots"
+    content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+  >
   <meta name="theme-color" content="#020617">
   <meta property="og:title" content="NovaTextVN | Переводчик Ren'Py-игр на русский язык">
-  <meta property="og:description" content="Практичный сайт NovaTextVN: Base-релиз, установка, совместимость, безопасность и страница PRO для Ren'Py-игр.">
+  <meta
+    property="og:description"
+    content="NovaTextVN помогает быстро запустить перевод Ren'Py-игры: скачайте Base-релиз, положите файлы в game/ и включите перевод через F10."
+  >
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sam1ce1.github.io/">
   <meta property="og:image" content="https://sam1ce1.github.io/android-chrome-512x512.png">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image:alt" content="NovaTextVN">
+  <meta property="og:site_name" content="NovaTextVN">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="NovaTextVN | Переводчик Ren'Py-игр на русский язык">
-  <meta name="twitter:description" content="Base-релиз, установка, совместимость, безопасность и PRO для Ren'Py-игр.">
+  <meta
+    name="twitter:description"
+    content="Основной сайт NovaTextVN, установка, совместимость, Base-релиз и PRO для Ren'Py-игр."
+  >
+  <meta name="twitter:image" content="https://sam1ce1.github.io/android-chrome-512x512.png">
+  <link rel="icon" href="https://sam1ce1.github.io/favicon.ico" sizes="any" type="image/x-icon">
+  <link rel="icon" href="https://sam1ce1.github.io/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="https://sam1ce1.github.io/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="https://sam1ce1.github.io/apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="https://sam1ce1.github.io/site.webmanifest">
+  <link rel="canonical" href="https://sam1ce1.github.io/">
+  <link rel="alternate" hreflang="ru" href="https://sam1ce1.github.io/">
+  <link rel="alternate" hreflang="x-default" href="https://sam1ce1.github.io/renpy-game-translator-russian/">
+  <link rel="sitemap" type="application/xml" href="https://sam1ce1.github.io/sitemap.xml">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #020617;
+      --card: rgba(15, 23, 42, 0.9);
+      --line: rgba(148, 163, 184, 0.18);
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --accent: #22d3ee;
+      --accent-2: #818cf8;
+      --accent-3: #f59e0b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top, rgba(34, 211, 238, 0.15), transparent 32%),
+        radial-gradient(circle at right, rgba(129, 140, 248, 0.12), transparent 26%),
+        linear-gradient(180deg, #020617 0%, #0f172a 100%);
+    }
+
+    .wrap {
+      width: min(100%, 1024px);
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: 0 30px 80px rgba(2, 6, 23, 0.45);
+      overflow: hidden;
+    }
+
+    .hero {
+      padding: 40px 24px 28px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(34, 211, 238, 0.08);
+      border: 1px solid rgba(34, 211, 238, 0.18);
+      color: #a5f3fc;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    h1 {
+      margin: 18px 0 14px;
+      font-size: clamp(34px, 6vw, 54px);
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 18px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 14px;
+      border: 1px solid transparent;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-1px);
+    }
+
+    .button-primary {
+      color: #03111f;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    }
+
+    .button-secondary {
+      color: var(--text);
+      border-color: var(--line);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      padding: 24px;
+    }
+
+    .panel {
+      padding: 22px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .panel h2 {
+      margin: 0 0 10px;
+      font-size: 22px;
+    }
+
+    .panel p,
+    .panel li {
+      font-size: 16px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    a {
+      color: #bae6fd;
+    }
+
+    .footer {
+      padding: 0 24px 24px;
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    @media (max-width: 720px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 28px 18px 22px;
+      }
+
+      .footer {
+        padding: 0 18px 18px;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://sam1ce1.github.io/#organization",
+          "name": "NovaTextVN",
+          "url": "https://sam1ce1.github.io/renpy-game-translator-russian/",
+          "logo": "https://sam1ce1.github.io/android-chrome-512x512.png",
+          "sameAs": [
+            "https://github.com/SAM1CE1/NovaTextVN-Releases",
+            "https://github.com/SAM1CE1/renpy-game-translator-russian",
+            "https://boosty.to/novatextvn"
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://sam1ce1.github.io/#webpage",
+          "url": "https://sam1ce1.github.io/",
+          "name": "NovaTextVN | Переводчик Ren'Py-игр на русский язык",
+          "description": "Корневая страница NovaTextVN со ссылками на основной сайт, установку, совместимость, релизы Base и страницу PRO.",
+          "inLanguage": "ru",
+          "about": {
+            "@id": "https://sam1ce1.github.io/#organization"
+          },
+          "mainEntityOfPage": "https://sam1ce1.github.io/"
+        }
+      ]
+    }
+  </script>
   <!-- Yandex.Metrika counter -->
-  <script type="text/javascript">
+  <script>
     (function (m, e, t, r, i, k, a) {
       m[i] =
         m[i] ||
@@ -33,41 +255,77 @@
       k.async = 1;
       k.src = r;
       a.parentNode.insertBefore(k, a);
-    })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=108582994', 'ym');
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js?id=108582994", "ym");
 
-    ym(108582994, 'init', {
+    ym(108582994, "init", {
       ssr: true,
       webvisor: true,
       clickmap: true,
-      ecommerce: 'dataLayer',
+      ecommerce: "dataLayer",
       referrer: document.referrer,
       url: location.href,
       accurateTrackBounce: true,
-      trackLinks: true,
+      trackLinks: true
     });
   </script>
   <!-- /Yandex.Metrika counter -->
-  <link rel="icon" href="https://sam1ce1.github.io/favicon.ico" sizes="any" type="image/x-icon">
-  <link rel="icon" href="https://sam1ce1.github.io/favicon-32x32.png" sizes="32x32" type="image/png">
-  <link rel="icon" href="https://sam1ce1.github.io/favicon-16x16.png" sizes="16x16" type="image/png">
-  <link rel="apple-touch-icon" href="https://sam1ce1.github.io/apple-touch-icon.png" sizes="180x180">
-  <link rel="manifest" href="https://sam1ce1.github.io/site.webmanifest">
-  <link rel="canonical" href="https://sam1ce1.github.io/">
 </head>
 <body>
   <noscript>
-    <div><img src="https://mc.yandex.ru/watch/108582994" style="position:absolute; left:-9999px;" alt=""></div>
+    <div>
+      <img
+        src="https://mc.yandex.ru/watch/108582994"
+        style="position:absolute; left:-9999px;"
+        alt=""
+      >
+    </div>
   </noscript>
-  <main>
-    <h1>NovaTextVN</h1>
-    <p>NovaTextVN — переводчик Ren'Py-игр на русский язык. Если вы ищете, как перевести Ren'Py-игру без ручной сборки, начните с Base-релиза: скачайте архив, положите файлы в <code>game/</code> и включите перевод через <code>F10</code>.</p>
-    <ul>
-      <li><a href="https://sam1ce1.github.io/renpy-game-translator-russian/">Открыть основной сайт NovaTextVN</a></li>
-      <li><a href="https://github.com/SAM1CE1/NovaTextVN-Releases/releases/latest">Скачать Base-релиз</a></li>
-      <li><a href="https://sam1ce1.github.io/renpy-game-translator-russian/install.html">Как установить переводчик в Ren'Py-игру</a></li>
-      <li><a href="https://sam1ce1.github.io/renpy-game-translator-russian/compatibility.html">Проверить совместимость с Ren'Py-игрой</a></li>
-      <li><a href="https://sam1ce1.github.io/renpy-game-translator-russian/pro.html">Когда уже нужен PRO</a></li>
-    </ul>
+  <main class="wrap">
+    <article class="card">
+      <section class="hero">
+        <div class="eyebrow">NovaTextVN для Ren'Py-игр</div>
+        <h1>Переводчик Ren'Py-игр на русский язык без ручной сборки</h1>
+        <p>
+          Эта корневая страница ведёт на основной сайт NovaTextVN и на ключевые материалы:
+          Base-релиз, установку, совместимость, релизы и PRO. Если вам нужен полный сайт,
+          открывайте раздел ниже.
+        </p>
+        <div class="cta-row">
+          <a class="button button-primary" href="https://sam1ce1.github.io/renpy-game-translator-russian/">
+            Открыть основной сайт
+          </a>
+          <a class="button button-secondary" href="https://github.com/SAM1CE1/NovaTextVN-Releases/releases/latest">
+            Скачать Base-релиз
+          </a>
+        </div>
+      </section>
+
+      <section class="grid" aria-label="Основные разделы NovaTextVN">
+        <div class="panel">
+          <h2>Что делает NovaTextVN</h2>
+          <p>
+            NovaTextVN помогает быстро проверить перевод Ren'Py-игры: скачайте архив, положите
+            два файла в <code>game/</code>, запустите игру и включите перевод через <code>F10</code>.
+          </p>
+        </div>
+        <div class="panel">
+          <h2>Куда идти дальше</h2>
+          <ul>
+            <li><a href="https://sam1ce1.github.io/renpy-game-translator-russian/">Основной сайт NovaTextVN</a></li>
+            <li><a href="https://sam1ce1.github.io/renpy-game-translator-russian/install.html">Как установить переводчик</a></li>
+            <li><a href="https://sam1ce1.github.io/renpy-game-translator-russian/compatibility.html">Проверить совместимость</a></li>
+            <li><a href="https://sam1ce1.github.io/renpy-game-translator-russian/changelog.html">Открыть релизы</a></li>
+            <li><a href="https://sam1ce1.github.io/renpy-game-translator-russian/pro.html">Когда уже нужен PRO</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <p class="footer">
+        Корневая страница индексируема и предназначена как входная точка на материалы NovaTextVN.
+        Основной контент проекта находится по адресу
+        <a href="https://sam1ce1.github.io/renpy-game-translator-russian/">sam1ce1.github.io/renpy-game-translator-russian/</a>.
+      </p>
+    </article>
   </main>
 </body>
 </html>
